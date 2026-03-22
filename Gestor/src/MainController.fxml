@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+  <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu text="Archivo">
+            <items>
+              <MenuItem onAction="#onNuevoProducto" text="Nuevo Producto" />
+              <MenuItem onAction="#onGuardar" text="Guardar" />
+              <MenuItem onAction="#onCargar" text="Cargar" />
+              <SeparatorMenuItem />
+              <MenuItem onAction="#onSalir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu text="Editar">
+            <items>
+              <MenuItem onAction="#onEliminar" text="Eliminar seleccionado" />
+              <MenuItem onAction="#onLimpiarLista" text="Limpiar lista" />
+            </items>
+          </Menu>
+          <Menu text="Ayuda">
+            <items>
+              <MenuItem onAction="#onAcercaDe" text="Acerca de" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+  </top>
+  <center>
+      <TableView fx:id="tablaProductos" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre" />
+          <TableColumn fx:id="colCategoria" prefWidth="150.0" text="Categoría" />
+          <TableColumn fx:id="colPrecio" prefWidth="100.0" text="Precio" />
+          <TableColumn fx:id="colCantidad" prefWidth="100.0" text="Cantidad" />
+        </columns>
+      </TableView>
+  </center>
+  <bottom>
+      <VBox spacing="5.0" BorderPane.alignment="CENTER">
+        <children>
+            <ProgressBar fx:id="progressBar" maxWidth="1.7976931348623157E308" progress="0.0" />
+            <Label fx:id="labelEstado" text="Listo" />
+        </children>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+        </padding>
+      </VBox>
+  </bottom>
+  <right>
+      <VBox prefWidth="120.0" spacing="10.0" BorderPane.alignment="CENTER">
+        <children>
+            <Button maxWidth="1.7976931348623157E308" onAction="#onNuevoProducto" style="-fx-background-color: yellow;" text="Agregar" />
+            <Button maxWidth="1.7976931348623157E308" onAction="#onEliminar" style="-fx-background-color: yellow;" text="Eliminar" />
+            <Button maxWidth="1.7976931348623157E308" onAction="#onGuardar" style="-fx-background-color: yellow;" text="Guardar" />
+            <Button maxWidth="1.7976931348623157E308" onAction="#onCargar" style="-fx-background-color: yellow;" text="Cargar" />
+        </children>
+        <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        </padding>
+      </VBox>
+  </right>
+</BorderPane>

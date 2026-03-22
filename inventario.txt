@@ -1,0 +1,4 @@
+Banana,fruta,50.0,10
+Manzana,fruta,250.0,10
+Laptop,Tegnologia,60000.0,1
+Pera,Fruta,75.0,10
